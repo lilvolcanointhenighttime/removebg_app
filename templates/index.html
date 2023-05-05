@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Удаление фона с помощью rembg</title>
+  </head>
+  <body>
+    <h1>Удаление фона с помощью rembg</h1>
+    <form action="/process" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Отправить">
+    </form>
+    <br>
+    <h2>Результат:</h2>
+    <img id="result" src="">
+    <script>
+      function showResult(result) {
+        var img = document.getElementById('result');
+        img.src = 'data:image/png;base64,' + result;
+      }
+      function processFile(file) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/process');
+        xhr.onload = function() {
+          showResult(xhr.responseText);
+        };
+        xhr.send(file);
+      }
+      var fileInput = document.querySelector('input[name="file"]');
+      fileInput.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        processFile(file);
+      });
+    </script>
+  </body>
+</html>
