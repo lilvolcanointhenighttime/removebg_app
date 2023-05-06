@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_file
 from rembg import remove
 import io
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='templates')
 
 
 @app.route('/')
@@ -20,4 +20,4 @@ def process():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8000)
