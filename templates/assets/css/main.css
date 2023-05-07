@@ -1,0 +1,48 @@
+body {
+    overflow: hidden;
+    background-color: black;
+    background-image: url(/templates/assets/images/milkyway.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 361px 182px 288px 356px;
+    display: flex;
+    height: 100px
+}
+
+.browse {
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 180px;
+    height: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.browse:hover {
+  font-size: 200px;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.browse:active {
+  color: #F4ECFB;
+  font-size: 80px;
+  font-weight: bold;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.parent{
+  position: relative;
+  top: -370px;
+  left: 275px;
+}
+
+.child{
+  position: absolute;
+}
+
